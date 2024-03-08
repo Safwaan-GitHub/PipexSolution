@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:50:29 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:07:32 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/08 17:50:48 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_cmd_data	*pop_data(int ac, char **av, int here_doc, char **env)
 {
 	t_cmd_data	*d;
-	int		i;
+	int			i;
 
 	i = 0;
 	d = malloc(sizeof(t_cmd_data));
@@ -42,7 +42,7 @@ t_cmd_data	*pop_data(int ac, char **av, int here_doc, char **env)
 
 void	*pipex(t_cmd_data *d, char **env)
 {
-	int	fd[2];
+	int		fd[2];
 	pid_t	pid;
 	t_list	*lst;
 

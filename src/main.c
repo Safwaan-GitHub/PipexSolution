@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:47:18 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:05:31 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/08 17:49:40 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_list	*parse_command(t_cmd_data *d, int ac, char **av)
 {
 	char	**cmd;
 	char	*full_line;
-	int	i;
-	int	temp;
+	int		i;
+	int		temp;
 	t_list	*cmds;
 
 	i = 1;
@@ -42,7 +42,7 @@ t_list	*parse_command(t_cmd_data *d, int ac, char **av)
 
 int	get_line(char *cmd, char **full_line, t_cmd_data *d)
 {
-	int	i;
+	int		i;
 	char	*temp;
 
 	i = -1;
