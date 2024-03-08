@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:50:29 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:50:48 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:56:13 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	*pipex(t_cmd_data *d, char **env)
 		close(fd[0]);
 		lst = lst->next;
 	}
+	return (NULL);
 }
 
 void	*child_process(t_cmd_data *d, int fd[2], t_list *lst, char **env)

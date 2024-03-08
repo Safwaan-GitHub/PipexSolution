@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:24:56 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:19:02 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:58:23 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	pipex_perror(char *param, int err)
 		fd_putstr_fd("FORK_Error", 2);
 	if (err == NO_CMD)
 		fd_putstr_fd("CMD_Error", 2);
-	if (param && NO_FILE || NO_PERM || EXECVE_ERROR || NO_CMD)
+	if ((param && NO_FILE) || NO_PERM || EXECVE_ERROR || NO_CMD)
 		fd_putstr_fd(param, 2);
 	fd_putstr_fd("\n", 2);
 }
