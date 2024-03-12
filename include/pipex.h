@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:57:52 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:48:44 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/12 13:41:19 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,11 @@ size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 int			get_line(char *cmd, char **full_line, t_cmd_data *d);
 int			fd_putstr_fd(char *str, int fd);
+int     		t_infd(t_cmd_data *d, char *str);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 char		*ft_strdup(const char *s1);
+char    	*get_str(char *delim, char *buff, char *ret);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		**ft_split(char const *s, char c);
 void		*pipex(t_cmd_data *d, char **env);
