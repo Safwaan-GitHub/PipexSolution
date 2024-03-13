@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:57:52 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/08 17:18:28 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:37:18 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 int     get_line(char *cmd, char **full_line, t_cmd_data *d);
 int     fd_putstr_fd(char *str, int fd);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
