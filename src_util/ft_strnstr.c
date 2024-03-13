@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 17:10:05 by aperez-b          #+#    #+#             */
-/*   Updated: 2024/03/01 18:32:21 by sanoor           ###   ########.fr       */
+/*   Created: 2024/03/13 16:31:33 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:31:38 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

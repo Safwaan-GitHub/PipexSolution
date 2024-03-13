@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/13 15:14:43 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:18:56 by sanoor           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/pipex.h"
 
 char	*get_str(char *delim, char *buff, char *ret)
@@ -92,12 +104,14 @@ t_list	*parse_commands(t_cmd_data *d, int ac, char **av)
 	{
 		d->cmds = cmds;
 		cmd = ft_split(av[i], ' ');
-		temp = get_line(d, *cmd, &full_line);
+		if (!cmd && !d->cmds)
+			return ((t_list *)pipex_exit(d, NULL, NO_CMD, &cmd));
+		temp = get_line(*cmd, &full_line, d);
 		if (temp == -2)
-			return (*(t_list *)pipex_exit(d, NULL, NO_MEMORY, &cmd));
+			return (pipex_exit(d, NULL, NO_MEMORY, &cmd));
 		if (temp == -1)
-			return (*(t_list *)pipex_exit(d, *cmd, NO_CMD, &cmd));
-		ft_lstadd_back(&cmds, add_node(full_line, &cmds));
+			return (pipex_exit(d, *cmd, NO_CMD, &cmd));
+		ft_lstadd_back(&cmds, add_node(full_line, cmd));
 		free(full_line);
 	}
 	return (cmds);
@@ -124,8 +138,8 @@ int	main(int ac, char **av, char **env)
 		d->infd = get_infd(d, get_str(av[2], NULL, NULL));
 	}
 	else
-		d->in_fd = open(av[1], O_RDONLY);
+		d->infd = open(av[1], O_RDONLY);
 	d->cmds = parse_commands(d, ac, av);
 	pipex(d, env);
-	return (*(int *)pipex_exit(d, NULL, END, NULL));:
+	return (*(int *)pipex_exit(d, NULL, END, NULL));
 }

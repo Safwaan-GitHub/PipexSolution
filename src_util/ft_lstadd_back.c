@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 09:02:48 by aperez-b          #+#    #+#             */
-/*   Updated: 2024/03/06 20:18:35 by sanoor           ###   ########.fr       */
+/*   Created: 2024/03/13 16:28:32 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:28:41 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *newnode)
 {

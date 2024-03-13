@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 16:56:41 by aperez-b          #+#    #+#             */
-/*   Updated: 2024/03/01 18:06:47 by sanoor           ###   ########.fr       */
+/*   Created: 2024/03/13 16:29:44 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:29:51 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

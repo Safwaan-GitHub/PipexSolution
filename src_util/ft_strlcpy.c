@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 17:08:56 by aperez-b          #+#    #+#             */
-/*   Updated: 2024/03/01 18:33:10 by sanoor           ###   ########.fr       */
+/*   Created: 2024/03/13 16:29:58 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:30:02 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

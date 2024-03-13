@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 16:53:56 by aperez-b          #+#    #+#             */
-/*   Updated: 2024/03/01 18:32:57 by sanoor           ###   ########.fr       */
+/*   Created: 2024/03/13 16:31:45 by sanoor            #+#    #+#             */
+/*   Updated: 2024/03/13 16:31:51 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
