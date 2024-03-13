@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:14:43 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/13 16:18:56 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:29:50 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_str(char *delim, char *buff, char *ret)
 		{
 			read(0, c, 1);
 			temp = buff;
-			ft_strjoin(buff, c);
+			buff = ft_strjoin(buff, c);
 			free(temp);
 		}
 	}
@@ -41,7 +41,7 @@ char	*get_str(char *delim, char *buff, char *ret)
 
 int	get_infd(t_cmd_data *d, char *str)
 {
-	int	fd[2];
+	int		fd[2];
 	pid_t	pid;
 
 	if (pipe(fd) == -1)
@@ -53,6 +53,7 @@ int	get_infd(t_cmd_data *d, char *str)
 	{
 		close(fd[0]);
 		write(fd[1], str, ft_strlen(str));
+		d->infd = fd[0];
 		close(fd[1]);
 		free(str);
 		return(*(int *)pipex_exit(d, NULL, END, NULL));
@@ -64,21 +65,22 @@ int	get_infd(t_cmd_data *d, char *str)
 
 int	get_line(char *cmd, char **full_line, t_cmd_data *d)
 {
-	int	i;
+	int		i;
 	char	*temp;
 
 	i = -1;
-	while (d->envp[i] && d->envp[++i])
+	*full_line = NULL;
+	while (d->envp && d->envp[++i])
 	{
 		free(*full_line);
 		temp = ft_strjoin(d->envp[i], "/");
 		if (!temp)
 			return (-2);
 		*full_line = ft_strjoin(temp, cmd);
+		free(temp);
 		if (!full_line)
 			return (-2);
-		free(temp);
-		if (access(*full_line, R_OK) == 0)
+		if (access(*full_line, F_OK) == 0)
 			break ;
 	}
 	if (!d->envp && !d->envp[i])
@@ -104,7 +106,7 @@ t_list	*parse_commands(t_cmd_data *d, int ac, char **av)
 	{
 		d->cmds = cmds;
 		cmd = ft_split(av[i], ' ');
-		if (!cmd && !d->cmds)
+		if (!cmd || !*cmd)
 			return ((t_list *)pipex_exit(d, NULL, NO_CMD, &cmd));
 		temp = get_line(*cmd, &full_line, d);
 		if (temp == -2)
@@ -136,6 +138,7 @@ int	main(int ac, char **av, char **env)
 		if (ac-- < 6)
 			return (*(int *)pipex_exit(d, NULL, INV_ARGS, NULL));
 		d->infd = get_infd(d, get_str(av[2], NULL, NULL));
+		av++;
 	}
 	else
 		d->infd = open(av[1], O_RDONLY);

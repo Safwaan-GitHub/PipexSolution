@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:21:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/13 16:27:14 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:14:52 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_cmd_data	*pop_data(int ac, char **av, int here_doc, char **env)
 {
 	t_cmd_data	*d;
-	int	i;
+	int			i;
 
 	i = 0;
 	d = malloc(sizeof(t_cmd_data));
@@ -24,14 +24,14 @@ t_cmd_data	*pop_data(int ac, char **av, int here_doc, char **env)
 	d->cmds = NULL;
 	d->envp = NULL;
 	if (!here_doc)
-		d->outfd = open(av[ac - 1], O_CREAT | O_RDWR | O_TRUNC, 0666);
+		d->outfd = open(av[ac - 1], O_CREAT | O_WRONLY | O_TRUNC, 0666);
 	else
 		d->outfd = open(av[ac - 1], O_CREAT | O_WRONLY | O_APPEND, 0666);
 	if (access(av[ac - 1], F_OK) == -1)
 		return ((t_cmd_data *)pipex_exit(d, av[ac - 1], NO_FILE, NULL));
-	if (access(av[ac - 1], R_OK) == -1)
+	if (access(av[ac - 1], W_OK) == -1)
 		return ((t_cmd_data *)pipex_exit(d, av[ac - 1], NO_PERM, NULL));
-	while (env && !ft_strnstr(env[i], "PATH=", 5))
+	while (env[i] && !ft_strnstr(env[i], "PATH=", 5))
 		i++;
 	d->envp = ft_split(env[i], ':');
 	if (!d->envp)
