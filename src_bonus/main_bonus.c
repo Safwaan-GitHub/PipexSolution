@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:14:43 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/13 17:29:50 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 13:25:24 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*get_str(char *delim, char *buff, char *ret)
 	char	*temp;
 
 	c[1] = '\0';
-	while (!buff || ft_strlen(buff) - 1 != ft_strlen(delim) ||
-			ft_strncmp(delim, buff, ft_strlen(buff) - 1))
+	while (!buff || ft_strlen(buff) - 1 != ft_strlen(delim)
+		|| ft_strncmp(delim, buff, ft_strlen(buff) - 1))
 	{
 		temp = ret;
 		ret = ft_strjoin(ret, buff);
@@ -56,7 +56,7 @@ int	get_infd(t_cmd_data *d, char *str)
 		d->infd = fd[0];
 		close(fd[1]);
 		free(str);
-		return(*(int *)pipex_exit(d, NULL, END, NULL));
+		return (*(int *)pipex_exit(d, NULL, END, NULL));
 	}
 	close(fd[1]);
 	free(str);
@@ -122,8 +122,8 @@ t_list	*parse_commands(t_cmd_data *d, int ac, char **av)
 int	main(int ac, char **av, char **env)
 {
 	t_cmd_data	*d;
-	int	here_doc;
-	
+	int			here_doc;
+
 	if (ac < 5)
 		return (*(int *)pipex_exit(NULL, NULL, INV_ARGS, NULL));
 	here_doc = !ft_strncmp(av[1], "here_doc", ft_strlen(av[1]));

@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:21:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/13 17:14:52 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 13:25:43 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	*child_process(t_cmd_data *d, int fd[2], t_list *lst, char **env)
 void	*pipex(t_cmd_data *d, char **env)
 {
 	t_list	*cmd;
-	int	fd[2];
+	int		fd[2];
 	pid_t	pid;
 
 	cmd = d->cmds;
