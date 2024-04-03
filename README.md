@@ -51,5 +51,3 @@ This will apply cmd1 to infile and then cmd2 to the output of cmd1, with the fin
 Future Scope
 
 I am passionately driving this project towards being a comprehensive toolkit for UNIX systems, potentially including features like support for multiple pipes, increased command parsing sophistication, and broader compatibility. I'm on a path towards cyber security and advanced application development, and pipex is just the beginning.
-
-A great Resouce; https://github.com/madebypixel02 ;
