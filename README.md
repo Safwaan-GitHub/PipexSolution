@@ -25,26 +25,21 @@ Features
     Customizability: Easy to modify and extend for various applications.
     Resource Management: Impeccable memory and process management for efficient performance.
 
-Installation
+# Installation
 
-bash
-
-# Clone the repository
+1. Clone the repository
 git clone git@github.com:Safwaan-GitHub/pipex.git
 
-# Change directory
+2. Change directory
 cd pipex
 
-# Compile the program
+3. Compile the program
 make
 
-Usage
+# Usage
 
 To use pipex, compile the source files and then execute it as follows:
 
 ./pipex infile "cmd1" "cmd2" outfile
 
 This will apply cmd1 to infile and then cmd2 to the output of cmd1, with the final output written to outfile.
-Future Scope
-
-I am passionately driving this project towards being a comprehensive toolkit for UNIX systems, potentially including features like support for multiple pipes, increased command parsing sophistication, and broader compatibility. I'm on a path towards cyber security and advanced application development, and pipex is just the beginning.
