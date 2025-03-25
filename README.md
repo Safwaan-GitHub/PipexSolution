@@ -9,7 +9,6 @@ This repository holds the essence of my journey through system-level programming
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Future Scope](#future-scope)
 
 ## Introduction
 
@@ -18,7 +17,8 @@ This repository holds the essence of my journey through system-level programming
 < infile cmd1 | cmd2 > outfile
 
 It takes an input file, applies a command (cmd1), and directs the output to another command (cmd2), with the final output redirected to an outfile.
-Features
+
+# Features
 
     Streamlined Execution: Effortlessly recreate shell pipeline workflows.
     Error Handling: Built-in robust error handling for graceful failure responses.
