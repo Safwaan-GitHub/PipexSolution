@@ -6,8 +6,8 @@ This repository holds the essence of my journey through system-level programming
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
 - [Installation](#installation)
+- [Features](#features)
 - [Usage](#usage)
 
 ## Introduction
