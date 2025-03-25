@@ -28,13 +28,13 @@ Features
 # Installation
 
 1. Clone the repository
-git clone git@github.com:Safwaan-GitHub/pipex.git
+- "git clone https://github.com/Safwaan-GitHub/PipexSolution.git"
 
 2. Change directory
-cd pipex
+- cd pipex
 
 3. Compile the program
-make
+- make
 
 # Usage
 
