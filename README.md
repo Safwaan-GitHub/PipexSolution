@@ -18,15 +18,16 @@ This repository holds the essence of my journey through system-level programming
 
 It takes an input file, applies a command (cmd1), and directs the output to another command (cmd2), with the final output redirected to an outfile.
 
-# Features
+## Features
 
     Streamlined Execution: Effortlessly recreate shell pipeline workflows.
     Error Handling: Built-in robust error handling for graceful failure responses.
     Customizability: Easy to modify and extend for various applications.
     Resource Management: Impeccable memory and process management for efficient performance.
 
-# Installation
+## Installation
 
+```
 1. Clone the repository
 - "git clone https://github.com/Safwaan-GitHub/PipexSolution.git"
 
@@ -35,11 +36,11 @@ It takes an input file, applies a command (cmd1), and directs the output to anot
 
 3. Compile the program
 - make
-
-# Usage
+```
+## Usage
 
 To use pipex, compile the source files and then execute it as follows:
-
+```
 ./pipex infile "cmd1" "cmd2" outfile
-
+```
 This will apply cmd1 to infile and then cmd2 to the output of cmd1, with the final output written to outfile.
